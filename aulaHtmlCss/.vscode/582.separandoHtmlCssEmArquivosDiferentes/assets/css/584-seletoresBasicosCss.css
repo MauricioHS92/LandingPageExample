@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Podemos utilizar a classe para varias tags diferentes, nao necessariamente precisam ser de mesmo tipo. */
+.color-red {
+    color: red;
+}
+
+/* Podemos utilizar uma classe pai para escolher um dos itens filhos do corpo do codigo. */
+.main-content h2 {
+    font-style: italic;
+}
+
+/* Para escolhermos somente um tipo, mesmo que estejam na mesma classe, basta especifica-lo juntamente ex.: 'h2.heading'*/
+.main-content h2.heading {
+    font-style: italic;
+    color: chocolate;
+}
+
+/* Se escolhermos uma div pai para mexer a cor sem especificar que a filha tera outra configuracao,
+por padrao o navegador coloca como heranca o css da div pai na div filha.
+
+Caso queiramos especificar, podemos criar uma 'div { color: initial;}' por exemplo. */
+div {
+    color: initial;
+    margin-left: 20px;
+}
+
+/* Para selecoes de classes:
+'.pai' a classe deve ter somente 'pai' no nome.
+'.pai.filha' a classe deve ter somente 'pai filha' no nome.
+'.pai .filha' a classe deve ter uma como 'pai' e outra como 'filha' no nome e uma dentro da outra. (selecao de dependente) */
+.pai {
+    color: rgb(237, 51, 82);
+}
+
+/* Neste exemplo, eh selecionado somente as classes com 'filha' no nome com a utilizacao de '>'. Sem alterar o conteudo filho da filha. */
+.pai>.filha {
+    color: rgb(51, 97, 237);
+}
+
+.pai>.filha>.filha {
+    color: rgb(147, 51, 237);
+}
+
+/* quando utilizamos como no exemplo abaixo 'h1+p', estamos escolhendo o irmao logo abaixo do irmao mais velho sem mudar os irmaos seguintes
+Se ao invez de utilizarmos 'h1+p' utilizassemos 'h1~p' o navegador alteraria todas as tags 'p' sequentes. */
+.irmao-velho h1+p {
+    color: darkorange;
+}
+
+/* Com essa inversao 'p+h1', o navegador pega o h1 subsequente ao ultimos p que tenha um h1 logo na sequencia. */
+.irmao-velho p+h1 {
+    color: rgb(13, 255, 0);
+}
+
+/* para selecionarmos somente pelo atributo, basta colocalo entre '[meu-atributo]'
+Podemos tambem especificar ainda mais colocando o atributo juntamente com seu valor '[meu-atributo="valor"]', mas caso o valor mude a configuracao cai*/
+[meu-atributo] {
+    color: rgb(255, 85, 0);
+}
+
+/* Nesse caso, com o uso de '~=' podemos escolher por somente um dos valores dos demais que o nosso atributo possa ter. */
+[meu-atributo~="valor3"] {
+    color: rgb(99, 140, 253);
+}
+
+/* Nesse caso, com o uso de '|=' o navegador requer que o valor do atributo tenha um traco '-' na sua composicao e esteja no comeco da lista de valores.
+"resultado-a questao-b alternativa-c" */
+/* Se utilizassemos '^=' o valor do atributo DEVERA comecar com o campo ou primeira letra especificada ex.:'meu-atributo^="resultado"]' ou 'meu-atributo^="r"]'  */
+/* Se utilizassemos '$=' o valor do atributo DEVERA terminar com o campo ou ultima letra especificada ex.:'meu-atributo$="resultado"]' ou 'meu-atributo$="o"]' */
+/* Se utilizassemos '*=' o valor do atributo DEVERA conter o campo ou letra especificada ex.:'meu-atributo*="resultado"]' ou 'meu-atributo$="u"]' */
+[meu-atributo|="resultado"] {
+    color: rgb(99, 250, 253);
+}
+
+[checked] {
+    width: 50px;
+    height: 50px;
+}
+
+/*------------------------------------------------   PSEUDO CLASSES   ------------------------------------------------------------------------------------*/
+
+
+/* Usandpo pseudo classes, neste exemplo ':hover'. */
+.heading:hover {
+    background: red;
+}
+
+/* essa estilizacao faz com que o hover acima seja sutil ao passar o mouse no elemento. */
+.heading {
+    transition: all 300ms ease-in-out;
+}
+
+a {
+    color: darkorange;
+}
+
+/* Essa pseudo classe eh utilizada para links nao visitados inda. */
+a:link {
+    color: deeppink;
+}
+
+/* Essa pseudo classe eh utilizada para links ja foram visitados. */
+a:visited {
+    color: firebrick;
+}
+
+a:hover {
+    background: darkslateblue;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+a:active {
+    background: darkolivegreen;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+
+/* Um input text quando clicado esta em foco, abaixo pegamos todos os inputs em foco para a estilizacao. */
+input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    outline: none;
+    border: 1px solid black;
+}
+
+input:disabled {
+    background: rebeccapurple;
+    cursor: not-allowed;
+}
+
+/* Quando o input estiver marcado o texto abaixo mudara a cor do background. */
+input:checked+p {
+    background: red;
+}
+
+/* Quando o input nao estiver marcado o texto abaixo tera uma cor de background. */
+input:not(:checked)+p {
+    background: rgb(0, 191, 255);
+}
+
+/* Neste caso estamos buscando somente o primeiro filho da classe 'novo-pai' */
+.novo-pai .lista li:first-child {
+    background: red;
+}
+
+input:required {
+    background: rgb(13, 255, 0);
+}
+
+/* Nesse caso todas as tags 'p' terao bavground color menos a com a classe 'meio'. */
+p:not(.meio) {
+    background-color: rgb(218, 218, 218);
+}
+
+/* Qando eh colocado um numero dentre os parenteses, estamos informando qual o indice da lista que queremos. */
+ul li:nth-child(3) {
+    background: rebeccapurple;
+}
+
+/* Qando eh colocado '(even)' dentre os parenteses, estamos informando que queremos os indices pares. */
+ul li:nth-child(even) {
+    background: rgb(121, 208, 149);
+}
+
+/* Qando eh colocado '(odd)' dentre os parenteses, estamos informando que queremos os indices impares. */
+ul li:nth-child(odd) {
+    background: rgb(235, 150, 58);
+}
+
+/* Qando eh colocado um numero 3 seguido de um 'n' dentre os parenteses, estamos informando que queremos os indices de tres em tres. */
+ul li:nth-child(3n) {
+    background: rgb(235, 58, 197);
+}
+
+/* Qando eh colocado um numero 3 seguido de um 'n' '+5' dentre os parenteses, estamos informando que comecando do quinto elemento estamos de tres em tres. */
+ul li:nth-child(3n+5) {
+    background: rgb(235, 229, 58);
+}
+
+/*------------------------------------------------   PSEUDO ELEMENTOS   ------------------------------------------------------------------------------------*/
+
+/* Este eh um exemplo de pseudo elemento, neste caso estamos colocando o ' - ' apos dos itens da lista. */
+.exemplo-pseudo-element li::after {
+    content: ' - ';
+    background: rgb(188, 64, 64);
+    color: aliceblue;
+}
+
+/* Este eh um exemplo de pseudo elemento, neste caso estamos colocando o ' - ' antes dos itens da lista. */
+.exemplo-pseudo-element li::before {
+    content: ' - ';
+    background: rgb(64, 134, 188);
+    color: aliceblue;
+}
+
+/* Nesse caso a primeira letra do texto tera seu destaque */
+.teste::first-letter {
+    font-size: 50px;
+    display: block;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+/* Nesse caso a primeira linha do texto tera seu destaque */
+.teste::first-line {
+    background: goldenrod;
+}
+
+/* Nesse caso ao selecionarmos o texto tera sua cor de fundo alterada */
+.teste::selection {
+    background: green;
+    color: aliceblue;
+}
+
+/* Nesse caso mudamos a estilizacao do placeholder de um input */
+.form-field::placeholder {
+    font-size: 15px;
+    color: red;
+}
+
+/*------------------------------------------------   ESPECIFICIDADE   ------------------------------------------------------------------------------------*/
+
+/* Especificidade em CSS
+priemiro (STYLE no HTML) depois (ID), depois as (CLASSES, ATRIBUTOS e PSEUDO-CLASSES), (ELEMENTOS e PSEUDO-ELEMENTOS)
+*/
+
+/* Especificidade (1,0,0) */
+#p {
+    background: red;
+}
+
+/* Especificidade (0,1,0) */
+.p {
+    background: rgb(255, 0, 187);
+}
+
+/* A unica forma de fazer um comando de classe ser superior ao de um ID, eh colocando o ID em frente a classe.
+Alem disso, o elemento deve ter o ID e depois a classe para funcionar. */
+/* Especificidade (1,1,0) */
+#p.p {
+    background: yellowgreen;
+}
+
+/* Especificidade (1,1,1) */
+p#p.p {
+    background: rgb(0, 128, 255);
+}
+
+/* Especificidade (2,1,1) */
+#d p#p.p {
+    background: rgb(8, 41, 74);
+}
+
+/* Especificidade (2,1,2) */
+div#d p#p.p {
+    background: rgb(48, 109, 64);
+}
+
+/* Especificidade (2,2,2) */
+div#d.dclass p#p.p {
+    background: rgb(109, 48, 102);
+}
+
+/* Especificidade (2,2,3) */
+div#d.dclass p#p.p::selection {
+    background: rgb(238, 255, 110);
+}
+
+/* Especificidade (2,3,3) - uma solucao para sobrescrever esta especificidade eh utilizado o 'style=" "' dentro do html. */
+div#d.dclass p#p.p::selection:hover {
+    background: rgb(255, 110, 110);
+}
+
+/* Especificidade (0,0,5) 
+body div ul li a {}*/
+
+/* O uso de '!important' em qualquer regra de elemento, traz a preferencia da especificidade par ele*/
+/* Apenas um '!important' pode spbrescrever um outro '!important', caso a especificidade seja empatada, o desempate sera feita com as tags de especificidade */
+#p.p {
+    background: yellowgreen !important;
+}
+
+/* exemplo de css para colocar um item de forma original sem que pegue a mudanca de estilizacao dos demais. 
+
+p {
+    font-size: initial; //////// dica no formato original
+    font-size: inherit; //////// a heranca ativa novamente
+
+    esse metodo serve para cada propriedade, color, etc...
+} */

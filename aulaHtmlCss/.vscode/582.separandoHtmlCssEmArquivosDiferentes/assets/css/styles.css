@@ -1,0 +1,19 @@
+/* O asterisco '*' eh o seletor ALL, pega todos os elementos da pagina. 
+Geralmente ZERA-SE as margens e padding para nao ter que fazer isso posteriormente*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Podemos utilizar o css por 'tag', nesse caso a tag 'p'.
+Quando essa hierarquia eh utilizada para irmaos no caso do 'p' e do 'h1', usa-se a virgula. */
+p, h1 {
+    color: green;
+}
+
+/* Podemos utilizar o css por 'dependentes', nesse caso a pela hierarquia especifica.
+Quando essa hierarquia eh utilizada para irmaos no caso do 'p' e do 'h1', usa-se a virgula. */
+body div section p,
+body div section h1 {
+    color: red;
+}

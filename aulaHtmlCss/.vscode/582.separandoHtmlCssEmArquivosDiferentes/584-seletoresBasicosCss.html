@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../582.separandoHtmlCssEmArquivosDiferentes/assets/css/584-seletoresBasicosCss.css">
+</head>
+
+<body>
+
+    <!-- LINK EM AULA 
+        https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes
+        https://developer.mozilla.org/pt-BR/docs/Web/CSS/:not
+        https://developer.mozilla.org/pt-BR/docs/Web/CSS/:nth-child
+        https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-elements
+        https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity
+        https://www.w3.org/TR/selectors-3/#specificity
+        https://specificity.keegan.st/
+        https://www.w3schools.com/cssref/css_inherit.php
+        https://developer.mozilla.org/pt-BR/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance
+        https://www.sitepoint.com/css-inheritance-introduction/    -->
+
+    <h1 class="color-red">Lorem ipsum.</h1>
+    <h1>Lorem ipsum.</h1>
+    <p class="color-red">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Excepturi, expedita tempora pariatur, voluptatum, eius nihil quaerat veniam
+        sed quos quam maxime rerum eum ullam nesciunt! Modi ratione ipsam omnis ex!</p>
+
+    <div class="main-content">
+        <h2>Lorem.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Excepturi, expedita tempora pariatur, voluptatum, eius nihil quaerat veniam
+            sed quos quam maxime rerum eum ullam nesciunt! Modi ratione ipsam omnis ex!</p>
+    </div>
+    <div class="main-content">
+        <h1 class="heading">Lorem.</h1>
+        <h2 class="heading">Lorem.</h2>
+        <h3 class="heading">Lorem.</h3>
+        <p class="link"><a href="#"> Lorem ipsum</a> dolor sit amet, consectetur adipisicing elit.
+            Excepturi, expedita tempora pariatur, <a href="link2">voluptatum</a>, eius nihil quaerat veniam
+            sed quos quam maxime rerum eum ullam nesciunt! Modi ratione ipsam omnis ex!</p>
+    </div>
+
+    <div class="pai">
+        Pai
+        <div class="filha">
+            Filha
+
+            <div class="filha">
+                Filha da filha
+            </div>
+        </div>
+        <div class="filha">
+            Filha
+
+            <div class="filha">
+                Filha da filha
+            </div>
+        </div>
+    </div>
+
+    <div class="irmao-velho">
+        <h1>Lorem</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <h1>Lorem</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+
+    <input type="text">
+    <input type="text" disabled>
+    <input type="" required>
+    <input type="checkbox" checked>
+    <input type="checkbox">
+    <p>Ola mundo</p>
+    <h1 class="classe-h1" meu-atributo="valor">Lorem</h1>
+    <p class="classe-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="classe-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <h1 class="classe-h1">Lorem</h1>
+    <p class="classe-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="classe-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <h1 class="classe-h1" meu-atributo="valor1 valor2 valor3">Lorem</h1>
+    <h1 class="classe-h1" meu-atributo="resultado-a questao-b alternativa-c">Lorem</h1>
+
+    <div class="novo-pai">
+        <ul class="lista">
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+        </ul>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="meio">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+        <li>item 6</li>
+        <li>item 7</li>
+        <li>item 8</li>
+        <li>item 9</li>
+        <li>item 10</li>
+        <li>item 11</li>
+        <li>item 12</li>
+        <li>item 13</li>
+        <li>item 14</li>
+        <li>item 15</li>
+        <li>item 16</li>
+        <li>item 17</li>
+        <li>item 18</li>
+        <li>item 19</li>
+        <li>item 20</li>
+    </ul>
+
+    <ul class="exemplo-pseudo-element">
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+    <br>
+    <p>
+        <input class="form-field" type="text" name="" id="" placeholder="Ola!">
+        <input type="text" name="" id="" placeholder="Ola!">
+        <input type="text" name="" id="" placeholder="Ola!">
+        <input type="text" name="" id="" placeholder="Ola!">
+    </p>
+    <br>
+    <p class="teste">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Excepturi, expedita tempora pariatur, voluptatum, eius nihil quaerat veniam
+        sed quos quam maxime rerum eum ullam nesciunt! Modi ratione ipsam omnis ex!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Excepturi, expedita tempora pariatur, voluptatum, eius nihil quaerat veniam
+        sed quos quam maxime rerum eum ullam nesciunt! Modi ratione ipsam omnis ex!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Excepturi, expedita tempora pariatur, voluptatum, eius nihil quaerat veniam
+        sed quos quam maxime rerum eum ullam nesciunt! Modi ratione ipsam omnis ex!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Excepturi, expedita tempora pariatur, voluptatum, eius nihil quaerat veniam
+        sed quos quam maxime rerum eum ullam nesciunt! Modi ratione ipsam omnis ex!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Excepturi, expedita tempora pariatur, voluptatum, eius nihil quaerat veniam
+        sed quos quam maxime rerum eum ullam nesciunt! Modi ratione ipsam omnis ex!</p>
+
+        <div id="d" class="dclass">
+        <p class="p" id="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Excepturi, expedita tempora pariatur, voluptatum, eius nihil quaerat veniam
+            sed quos quam maxime rerum eum ullam nesciunt! Modi ratione ipsam omnis ex!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Excepturi, expedita tempora pariatur, voluptatum, eius nihil quaerat veniam
+            sed quos quam maxime rerum eum ullam nesciunt! Modi ratione ipsam omnis ex!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </div>
+
+</body>
+
+</html>

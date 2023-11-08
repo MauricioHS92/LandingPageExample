@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Esse comando executa de forma suavizada a rolagem da pagina */
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.grid {
+    /* A Grid de conteudos tera no maximo 1200px de largura,
+     mantera ao centro com o (0 auto) e tera um padding separando
+     o conteudo das laterais caso a tela diminua. */
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 73px;
+    /* padding efetuado devido a altura do menu para fazer o grid
+    de conteudo baixar e sair de tras da barra de navegacao. */
+}
+
+/* com o grid after, a grid faz o seu proprio clear nesse caso abaixo */
+.grid::after {
+    content: '';
+    /* criacao de um pseudo elemento dentro ao final da grid */
+    display: block;
+    clear: both;
+    /* o elemento criado ao final da grid limpa o conteudo da esquerda e da direita */
+}
+
+.grid .col {
+    width: 33.33%;
+    height: 300px;
+    float: left;
+    padding: 15px;
+}
+
+.grid .col-content {
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.1);
+    color: hsla(9, 100%, 64%, 1);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px 2px  darkblue;
+}
+
+/* p {
+    clear: left; /* limpa todos os elementos a sua esquerda neste caso 
+} */
+
+.menu {
+    /* Aqui estamos criando uma barra de menu com posicao fixa de rolagem. */
+    width: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.842);
+}
+
+.menu ul {
+    /* Aqui estamos alinhando o menu conforme o conteudo abaixo. */
+    list-style: none;
+    display: block;
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.menu ul li {
+    /* estamos colocando os links do menu lado a lado. */
+    float: left;
+}
+
+.menu ul li a {
+    /* Aqui estamos estilizando os (a)s do menu. */
+    display: block;
+    color: beige;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+    /* efeito em milisegundo de entrada e saida do hover. */
+}
+
+.menu ul li a:hover {
+    /* Aqui estamos estilizando os (a)s do menu. */
+    background: #333;
+}
+
+.full-page {
+    /* A Grid de conteudos tera no maximo 1200px de largura,
+    mantera ao centro com o (0 auto) e tera um padding separando
+    o conteudo das laterais caso a tela diminua. */
+    max-width: 100%; /* ao colocarmos 100% para que o background fique na tela toda,
+    quebramos os paddings do conteudo. Por isso a classe abaixo (.full-page-content)
+    esta para concertar isso. */
+    margin: 0 auto;
+    padding-top: 73px; /* padding efetuado devido a altura do menu para fazer o grid de conteudo baixar e sair de tras da barra de navegacao. */
+    height: 100vh;
+    background: turquoise;
+}
+
+.full-page-content { /* essa classe concerta o erro de alinhamento da full page devido
+    a mudanca no background da classe acima. */
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+@media all and (max-width: 568px) {
+    .grid .col {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 569px) and (max-width: 768px) {
+    .grid .col {
+        width: 50%;
+    }
+}
+
+@media all and (min-width: 769px) and (max-width: 1200px) {
+    .grid .col {
+        width: 33.33%;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .grid .col {
+        width: 25%;
+    }
+}

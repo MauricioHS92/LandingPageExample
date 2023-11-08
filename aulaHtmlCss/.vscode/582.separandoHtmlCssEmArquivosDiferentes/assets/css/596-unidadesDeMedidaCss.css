@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* Fazendo a utilizacao do documento raiz em (62.5%), conseguimos utilizar (rem)
+    de forma mais parecida com (px). Nesse caso se colocassemos (1rem) valeria como
+    (10px), se quisessemos (16px), colocariamos (1.6rem) / (height: 30rem; -> 300px )*/
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+.pai {
+    width: 50rem; /* 500px */
+    height: 100vh; /* 100% da viewport */
+    background: rgb(185, 185, 117);
+}
+
+.pai > div {
+    width: 50%; /* a porcentagem eh relacionada ao elemento (pai) dela. */
+    height: 50rem;
+    background: darkorange;
+}
+
+
+/* p {
+    escala de medida em (em) se baseia no elemento mais proximo dele (pai) com multiplicacao.
+    No exemplo temos nesse caso 50*0.5 = 25px no (p).  
+    font-size: 0.5em;
+}
+
+p {
+    escala de medida em (rem) se baseia no elemento raiz (html) com multiplicacao.
+    No exemplo temos nesse caso 20*1 = 20px no (p).  
+    font-size: 1.6rem; 
+} */
+
+p {
+    font-size: 2vmax; /* 2% do tamanho da tela, caso a tela seja girada,
+    muda para o sentido vertical a porcentagem */
+}
+
+.color-one {
+    background: grey;
+}
+
+.color-two {
+    background: violet;
+}

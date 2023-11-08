@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img-in-text {
+            width: 25px;
+            height: 22px;
+        }
+        .vermelho{
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!--legenda:
+
+        Links diponibilizados em aula como anexo:
+            https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element
+            https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links?hl=pt-br
+            https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/strong
+
+        Tags:
+        tag <h1> </h1> utilizada para cabecalho de pagina.
+
+        tag <p> </p> utilizada para paragrafos (paragrafos sempre ficam um abaixo do outro por ser uma tag 'block')
+            Dentro de paragrafos evita-se colocar tags 'block' pois podem quebrar a identacao do texto uma vez que os paragrafos sao 'inline'.
+
+        tag <style> </style> utilizada para inserir CSS no codigo.
+
+        tag <b> </b> utilizada para 'negrito' em texto.
+
+        tag <strong> </strong> tag semantica utilizada para colocar o texto 'mais forte' ex.: <strong>Cuidado</strong>, isso eh muito perigoso.
+
+        tag <i> </i> utilizada para 'italico' em texto.
+
+        tag <em> </em> tag semantica utilizada para dar enfase no texto, ex.: eu <em>amooooo</em> comer hot-dog.
+            As tags de maneira semantica sao utilizadas para leitores automaticos de sites/telas.
+            Utilizamos esses leitores para os casos onde podemos ter usuarios com alguma deficiencia e que necessite utilizar a pagina/app.
+        
+        tag <a href=""> </a> utilizada para links
+            'target' utilizamos para direcionar diferentes formas de abrirmos o link, em novas abas ou nao por exemplo.
+
+        tag <img src="" alt=""> utilizada para adicao de imagens no codigo, 'src' seria o caminho onde a imagem esta e 'alt' o caompo de texto alternativo e legenda da imagem para leitores automaticos.
+            Podemos tambem colocar links com <a href=""> </a> para referenciarmos sites em imagens tambem.
+
+        tag <del> </del> tag semantica utilizada para erratas em textos para demonstrar um erro no texto (o texto fica com um risco na palavra).
+
+        tag <ins> </ins> tag semantica utilizada para adicionar textos (o texto fica soblinhado).
+
+        tag <s> </s> tag fisica utilizada para riscar uma palavra (assim como a <del>, mas sem o significado de errata).
+
+        tag <u> </u> tag fisica utilizada para soblinhar textos (assim como na tag <ins>, mas sem o significado de adicao de palavra).
+        
+        tag <small> </small> utilizada para diminuir um pouco o texto.
+
+        tag <sup> </sup> utilizada para colocar numeros elevados a outros (2²).
+
+        tag <sub> </sub> utilizado para colocar numeros abaixo como em formulas quimicas (H₂O).
+
+        tag <br> utilizada para quebra a linha.
+
+        tag <q> </q> utilizada para citacoes, o texto ficara entre aspas "".
+
+        tag <blockquote> </blockquote> utilizada fora de paragrafos, mas podendo ter paragrafos dentro dela. Para blocos de citacoes (esse sera um bloco identado por padrao de uma citacao em texto).
+            'cite' utilizado para inserirmos um link por exemplo de onde a citacao foi tirada.
+
+        tag <hr> utilizada para inserir uma linha horizontal na pagina inteira.
+
+        tag <code> </code> utilizada para inserirmos trechos de codigo na pagina para que fiquem visiveis ao usuario.
+            Somente a utilizacao de <code> podera trazer o codigo por extenso dificultando a leitura, utilizase a tag <pre> </pre>.
+        tag <pre> </pre> utilizada para deixar o codigo formatado para melhor leitura do usuario.
+
+        tag <span> </span> utilizada para container genericos 'inline'.
+
+        tag <div> </div> utilizada poara container genericos 'inblock'.
+
+    -->
+
+    <h1 style="background: red;">Cabecalho</h1>
+    <h1>Cabecalho</h1>
+    <p><b>Lorem</b> <strong>ipsum</strong> <i>dolor</i> <em>sit</em> <a href="https://www.google.com.br/"
+            target="_blank">amet</a> consectetur <span class="vermelho">adipisicing</span> elit.
+        Excepturi tenetur,
+        <a href="https://www.youtube.com/" target="_blank">
+            <img class="img-in-text" src="https://seeklogo.com/images/M/mdn-logo-6DB9B0093F-seeklogo.com.png"
+                alt="MDN Logo" width="50" height="44">
+        </a>
+
+        <del>vermelho</del> <ins>azul</ins> <s>numquam</s> ad <u>suscipit</u> <small>consequatur</small> aspernatur
+        2<sup>2</sup>, H<sub>2</sub>O
+        molestias unde consequuntur,<br>
+
+        <hr>
+
+        <q cite="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/strong">Muitas vezes é confuso para novos
+            desenvolvedores porque há tantas maneiras de expressar a mesma coisa em um website renderizado. Bold e
+            Strong são talvez um dos casos mais
+            comuns.</q> natus saepe eum <code>console.log</code> tempore corporis cumque in illum impedit quo
+        voluptatibus.
+    </p>
+
+    <blockquote cite="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/strong">
+        <p>Aqui sim eu estou fazendo um bloco de citacao.</p>
+    </blockquote>
+
+    <pre>
+        <code>
+            #include
+                #include
+                
+                int main(void) {
+                    if(true) {
+                        printf("A instrução é verdadeira!\n");
+                    }
+                
+                    return 0;
+                }
+        </code>
+    </pre>
+    <div>Eu sou um bloco</div>
+</body>
+
+</html>
